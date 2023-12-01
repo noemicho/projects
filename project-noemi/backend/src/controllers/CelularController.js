@@ -3,10 +3,20 @@ import CelularSchema from "../models/CelularSchema.js"
 async function create(request, response) {
     const {marca, modelo, memoria, lançamento} = request.body
 
-    console.log(marca)
-    console.log(modelo)
-    console.log(memoria)
-    console.log(lançamento)
+    const celularCreated = await CelularSchema.create({
+        marca,
+        modelo,
+        memoria,
+        lançamento
+    })
+
+    return response.json(celularCreated)
 }
 
-export default {create}
+async function read(request, response) {
+    const celularList = await CelularSchema.find()
+
+    return response.json(celularList)
+} 
+
+export default {create, read}

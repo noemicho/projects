@@ -1,9 +1,10 @@
 import express from "express"
-import celularController from "./controllers/celularController.js"
+import CelularController from "./controllers/celularController.js"
 
 const routes = express.Router()
 
 //Rota Celulares
-routes.get('/celulares', celularController.create)
+routes.post('/celulares', CelularController.create)
+routes.get('/celulares', CelularController.read)
 
 export default routes

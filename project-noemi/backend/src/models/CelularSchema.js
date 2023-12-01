@@ -4,7 +4,7 @@ const celularSchema = new mongoose.Schema({
     marca: String,
     modelo: String,
     memoria: String,
-    lançamento: Date
+    lançamento: String
 })
 
 export default mongoose.model('Celular', celularSchema)
