@@ -1,11 +1,15 @@
-import React from 'react'
-import {Route} from "react-router-dom"
+import {Routes, Route} from 'react-router-dom'
 
-import App from '../src/App.jsx'
+import App from './App'
+import NewPhone from './NewPhone'
 
-export const Routes = [
-    {
-        path: '/',
-        element: <App></App>
-    }
-]
+function MainRoutes(){
+    return (
+        <Routes>
+            <Route path="/" element={<App/>}/>
+            <Route path="/new-phone" element={<NewPhone/>}/>
+        </Routes>
+    )
+}
+
+export default MainRoutes

@@ -1,7 +1,37 @@
-.App{
-    margin: 0;
-    font-family: Helvetica, Arial, sans-serif;
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
 }
-table{
-    border: 1px solid gray;
+
+body{
+    background-color: rgb(82, 15, 82);
+}
+button{
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    background-color: rgb(165, 131, 165);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.table{
+    background-color: rgb(229, 233, 233);
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 8px rgb(155, 154, 154);
+}
+
+thead{
+    font-weight: bold;
+}
+
+th, td {
+  padding: 10px;
 }

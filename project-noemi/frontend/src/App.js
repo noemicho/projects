@@ -1,18 +1,16 @@
 import '../src/App.css'
 
+import { Link } from 'react-router-dom'
+
 function App(){
-    const handleNewPhone = () =>{
-        
-    }
 
     return (
-        <div className="App">
-            <div className="new-phone">
-                <button onClick={handleNewPhone}>
-                    Novo Celular
-                </button>
+        <div className="container">
+            <div className="button">
+                <Link to="/new-phone"><button>Novo Celular</button></Link>
+                
             </div>
-            <div className="">
+            <div className="table">
                 <table>
                     <thead>
                         <td>Marca</td>

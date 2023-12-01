@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import {Route, BrowserRouter, createBrowserRouter, RouterProvider} from 'react-router-dom'
+//import App from '../src/App.js'
+import '../src/index.css'
 
-import Routes from '../src/routes.js'
-
-const router = createBrowserRouter(Routes)
+import { BrowserRouter } from 'react-router-dom'
+import MainRoutes from './routes.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <div>
-    <RouterProvider router={router}/>
-  </div>
+    
+    <BrowserRouter>
+        <MainRoutes></MainRoutes>
+    </BrowserRouter>
+    
 )
