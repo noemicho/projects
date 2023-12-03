@@ -6,7 +6,7 @@ import NewPhone from './NewPhone'
 function MainRoutes(){
     return (
         <Routes>
-            <Route path="/" element={<App/>}/>
+            <Route path="/home" element={<App/>}/>
             <Route path="/new-phone" element={<NewPhone/>}/>
         </Routes>
     )

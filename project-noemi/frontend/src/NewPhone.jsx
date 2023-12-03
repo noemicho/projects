@@ -2,7 +2,9 @@ import '../src/NewPhone.css'
 
 import { useState } from 'react'
 
-import api from './api'
+import api from '../src/api.js'
+
+import { Link } from 'react-router-dom'
 
 function NewPhone(){
 
@@ -11,12 +13,26 @@ function NewPhone(){
     const [memoria, setMemoria] = useState('')
     const [lançamento, setLançamento] = useState('')
 
-    async function handleSalvar(){
-        if(marca === '' || modelo === '' || memoria=== '' || lançamento === ''){
-            console.log("preencha todos os campos")
-            return
-        }
-
+    async function handleSalvar(event){
+        event.preventDefault()
+        
+        try {
+            if(marca && modelo && memoria && lançamento){
+                const response = await api.post('/home/celulares', {
+                    marca,
+                    modelo,
+                    memoria,
+                    lançamento,
+                  });
+            console.log('tudo preenchido, criado')
+            }else{
+                console.log('preencha tudo')
+            }
+            
+        
+          } catch (error) {
+            console.error("Erro ao salvar:", error);
+          }
     
     }
 
@@ -61,7 +77,7 @@ function NewPhone(){
                 
             </div>
             <div className='button-group'>
-                <button>Cancelar</button>
+                <Link to='/home'><button>Cancelar</button></Link>
                 <button onClick={handleSalvar}>Salvar</button>
             </div>
             

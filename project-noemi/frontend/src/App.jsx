@@ -2,7 +2,16 @@ import '../src/App.css'
 
 import { Link } from 'react-router-dom'
 
+import { useEffect } from 'react'
+
 function App(){
+
+    useEffect(() => {
+        async function getAllPhones(){
+            
+        }
+    }
+    , [])
 
     return (
         <div className="container">
@@ -13,12 +22,15 @@ function App(){
             <div className="table">
                 <table>
                     <thead>
-                        <td>Marca</td>
-                        <td>Modelo</td>
-                        <td>Capacidade de Memória(GB)</td>
-                        <td>Data de Lançamento</td>
-                        <td>Alterar</td>
-                        <td>Excluir</td>
+                        <tr>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Capacidade de Memória(GB)</th>
+                            <th>Data de Lançamento</th>
+                            <th>Alterar</th>
+                            <th>Excluir</th>
+                    
+                        </tr>
                     </thead>
                     <tbody>
 
