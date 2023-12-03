@@ -4,9 +4,11 @@ import api from '../src/api.js'
 
 import { Link } from 'react-router-dom'
 
+import { useParams } from 'react-router-dom'
+
 function Update(){
 
-    
+    const {id} = useParams()
     const [marca, setMarca] = useState('')
     const [modelo, setModelo] = useState('')
     const [memoria, setMemoria] = useState('')
@@ -16,14 +18,15 @@ function Update(){
         event.preventDefault()
         
         try {
+
             if(marca && modelo && memoria && lançamento){
-                const response = await api.post('/home/celulares', {
+                const response = await api.patch(`/home/celulares/${id}`, {
                     marca,
                     modelo,
                     memoria,
                     lançamento,
                   });
-            console.log('tudo preenchido, criado')
+            console.log('tudo preenchido, atualizado')
             
             }else{
                 console.log('preencha tudo')
