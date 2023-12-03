@@ -43,7 +43,7 @@ function App(){
                     </thead>
                     
                     {allPhones.map(data => (
-                        <Body data={data}/>
+                        <Body key={data._id} data={data}/>
                     ))}
                     
                 </table>

@@ -33,7 +33,7 @@ function Body({data}){
                 <td>{data.modelo}</td>
                 <td>{data.memoria}</td>
                 <td>{data.lançamento}</td>
-                <td><Link to='/update'><button>Alterar</button></Link></td>
+                <td><Link to={`/update/${data._id}`}><button>Alterar</button></Link></td>
                 <td><button onClick={handleDelete}>Excluir</button></td>
             </tr>
         </tbody>
