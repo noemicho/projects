@@ -2,6 +2,8 @@ import React from "react"
 
 import api from '../src/api.js'
 
+import { Link } from "react-router-dom"
+
 function Body({data}){
 
     async function handleDelete(){
@@ -22,24 +24,7 @@ function Body({data}){
           }
     }
 
-    async function handleUpdate({data}){
-        try {
-            
-            const { _id } = data
-      
-            if (_id) {
-              
-              const response = await api.patch(`/home/celulares/${_id}`);
-              console.log('dados do celular atualizados', response);
-      
-              
-            } else {
-              console.error('celular nao encontrado para atualizar');
-            }
-          } catch (error) {
-            console.error('erro ao atualizar o celular:', error);
-          }
-    }
+    
 
     return(
         <tbody>
@@ -48,7 +33,7 @@ function Body({data}){
                 <td>{data.modelo}</td>
                 <td>{data.memoria}</td>
                 <td>{data.lançamento}</td>
-                <td><button onClick={handleUpdate}>Alterar</button></td>
+                <td><Link to='/update'><button>Alterar</button></Link></td>
                 <td><button onClick={handleDelete}>Excluir</button></td>
             </tr>
         </tbody>

@@ -8,6 +8,7 @@ function MainRoutes(){
         <Routes>
             <Route path="/home" element={<App/>}/>
             <Route path="/new-phone" element={<NewPhone/>}/>
+           
         </Routes>
     )
 }
