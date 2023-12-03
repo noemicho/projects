@@ -2,14 +2,23 @@ import '../src/App.css'
 
 import { Link } from 'react-router-dom'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+import api from '../src/api.js'
+
+import Body from '../src/Body.jsx'
 
 function App(){
 
+    const [allPhones, setAllNotes] = useState([])
+
     useEffect(() => {
         async function getAllPhones(){
-            
+            const response = await api.get('/home/celulares')
+
+            setAllNotes(response.data)
         }
+        getAllPhones()
     }
     , [])
 
@@ -32,9 +41,11 @@ function App(){
                     
                         </tr>
                     </thead>
-                    <tbody>
-
-                    </tbody>
+                    
+                    {allPhones.map(data => (
+                        <Body data={data}/>
+                    ))}
+                    
                 </table>
             </div>
         </div>

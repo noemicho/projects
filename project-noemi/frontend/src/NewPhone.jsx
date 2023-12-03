@@ -25,6 +25,7 @@ function NewPhone(){
                     lançamento,
                   });
             console.log('tudo preenchido, criado')
+            
             }else{
                 console.log('preencha tudo')
             }
@@ -35,7 +36,7 @@ function NewPhone(){
           }
     
     }
-
+    
     return(
         <div className="container">
             <div className='group'>
@@ -83,6 +84,7 @@ function NewPhone(){
             
         </div>
     )
+    
 }
 
 export default NewPhone
