@@ -4,13 +4,21 @@
 import mongoose from 'mongoose'
 
 const dbConfig = 'mongodb+srv://noemicho:EQj9Regtb1pTE1vZ@cluster0.bynfaw4.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp'
+const dbName = "BD-Celulares"
 
 const connection = mongoose
-    .connect(dbConfig)
+    .connect(
+      dbConfig,
+      {
+        dbName: dbName
+      }
+      
+      )
     .then(() => {
         console.log("Conectado ao MongoDB")
       })
       .catch((err) => {
+        console.log('não conectou')
         console.error("Erro de conexão com o MongoDB: ", err)
         process.exit()
       })
